@@ -5,11 +5,14 @@ export default class home extends React.Component{
   constructor(props){
     super(props)
     this.state={
-
+      type:1,
+      value:2,
     }
   }
 
   componentWillMount(){
+    const state=this.state
+    // console.log({...state,loading:false})
   }
 
   render(){

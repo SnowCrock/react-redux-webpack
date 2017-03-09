@@ -1,5 +1,6 @@
 var webpack = require('webpack')
 var path = require('path')
+var openBrowserWebpackPlugin = require('open-browser-webpack-plugin')
 var config={
   entry:[     //入口文件
     path.resolve(__dirname,'app/index.js')  
@@ -15,6 +16,8 @@ var config={
     alias:{
       pages:path.resolve(__dirname,'app/pages'),
       styles:path.resolve(__dirname,'styles')
+      actions:path.resolve(__dirname,'app/actions')
+      reducers:path.resolve(__dirname,'app/reducers')
     }
   }, 
   module:{    //webpack将所有的资源都看做是模块，而模块就需要加载器；主要定义一些loaders,定义哪些后缀名的文件应该用哪些loader
@@ -34,7 +37,8 @@ var config={
     ]
   },  
   plugins:[   //定义一些额外的插件
-    new webpack.HotModuleReplacementPlugin()  //代码热替换
+    new webpack.HotModuleReplacementPlugin(),  //代码热替换
+    new openBrowserWebpackPlugin({url:'http://localhost:3000'}),//自动打开浏览器地址
   ], 
 }
 

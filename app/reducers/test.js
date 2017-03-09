@@ -1,0 +1,1 @@
+export default testReducer=(state=0,action)=>state
