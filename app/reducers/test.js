@@ -1,1 +1,3 @@
-export default testReducer=(state=0,action)=>state
+export default function counter(state = 0, action) {
+  return 0;
+}
