@@ -1,5 +1,17 @@
 import React from 'react'
+import { bindActionCreators } from 'redux'
+import { connect } from 'react-redux'
+import {
+  addTodo,
+} from 'actions/home'
 import 'styles/homeStyle.less'
+
+@connect(
+  (state,props)=>({
+    counter:state,
+  }),
+)//两种写法  跟的参数都是一样的
+
 
 export default class home extends React.Component{
   constructor(props){
@@ -8,28 +20,33 @@ export default class home extends React.Component{
       type:1,
       value:2,
     }
+    this.send = this.send.bind(this)
+  }
+
+  send(){
+    this.props.dispatch(addTodo(111))
   }
 
   componentWillMount(){
     const state=this.state
-    // console.log({...state,loading:false})
+    console.log({...state,loading:false})
   }
 
   render(){
     return(
-      <div className='home'>
-        <ul className='title'>
-          <li>
-            <a>HOME</a>
-          </li>
-          <li>
-            <a>Setting</a>
-          </li>
-          <li>
-            <a>ABOUT</a>
-          </li>
-        </ul>
+      <div>
+        主页
       </div>
     )
   }
 }
+
+
+
+function mapStateToProps(state){
+  return{
+    counter:state,
+  }
+}
+
+// export default connect(mapStateToProps)(home)

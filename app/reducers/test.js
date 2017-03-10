@@ -1,3 +1,7 @@
-export default function counter(state = 0, action) {
-  return 0;
+export  function counter1(state = 0, action) {
+  return action.type;
+}
+
+export  function counter2(state = 0, action) {
+  return action.text || '';
 }
