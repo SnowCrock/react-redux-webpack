@@ -30,6 +30,7 @@ export default class app extends React.Component{
   }
 
   render(){
+    const { children } =this.props
     return(
       <div className='home'>
         <ul className='title'>
@@ -37,12 +38,16 @@ export default class app extends React.Component{
             <Link to='/home'>HOME</Link>
           </li>
           <li>
-            <a onClick={this.send}>Setting</a>
+            <Link to='/setting'>Setting</Link>
           </li>
           <li>
-            <a>ABOUT</a>
+            <Link to='/about'>ABOUT</Link>
+          </li>
+          <li>
+            <a onClick={this.send}>test</a>
           </li>
         </ul>
+        {children}
       </div>
     )
   }
