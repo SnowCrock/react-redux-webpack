@@ -1,0 +1,4 @@
+文件名字太长无法添加时  
+git config core.longpaths true
+
+查看分支图   git log --graph --all
