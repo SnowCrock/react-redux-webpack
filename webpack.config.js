@@ -15,10 +15,11 @@ var config={
     extensions:['.js','.jsx','.css','.less'],
     alias:{
       pages:path.resolve(__dirname,'app/pages'),
-      styles:path.resolve(__dirname,'styles'),
+      styles:path.resolve(__dirname,'app/styles'),
       actions:path.resolve(__dirname,'app/actions'),
       reducers:path.resolve(__dirname,'app/reducers'),
       store:path.resolve(__dirname,'app/store'),
+      utils:path.resolve(__dirname,'app/utils'),
     }
   }, 
   module:{    //webpack将所有的资源都看做是模块，而模块就需要加载器；主要定义一些loaders,定义哪些后缀名的文件应该用哪些loader

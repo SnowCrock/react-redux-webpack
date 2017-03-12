@@ -3,6 +3,7 @@ import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import { Link } from 'react-router'
 
+import { fetchPosts } from 'utils/ansyAction'
 @connect(
   (state,props)=>({
     counter:state,
@@ -21,7 +22,7 @@ export default class app extends React.Component{
   }
 
   send(){
-    this.props.dispatch(addTodo(111))
+    this.props.dispatch(fetchPosts(11))
   }
 
   componentWillMount(){
