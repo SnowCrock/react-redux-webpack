@@ -1,4 +1,5 @@
 import fetch from 'isomorphic-fetch'
+import { createAction } from 'redux-actions'
 
 
 export const REQUEST_POSTS = 'REQUEST_POSTS'
