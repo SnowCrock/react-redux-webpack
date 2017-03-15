@@ -29,7 +29,6 @@ export default class home extends React.Component{
 
   componentWillMount(){
     const state=this.state
-    console.log({...state,loading:false})
   }
 
   render(){

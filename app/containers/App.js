@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import { Link } from 'react-router'
 
 import { fetchPosts } from 'utils/ansyAction'
+import { increment } from 'actions/home'
 @connect(
   (state,props)=>({
     counter:state,
@@ -22,7 +23,7 @@ export default class app extends React.Component{
   }
 
   send(){
-    this.props.dispatch(fetchPosts(11))
+    this.props.dispatch(increment({}))
   }
 
   componentWillMount(){

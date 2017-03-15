@@ -21,12 +21,16 @@ function receivePosts(subreddit, json) {
 }
 
 export function createAjaxAction(api,startAction,endAction){
-  return function(dispatch){
-    dispatch(startAction)
-    fetch('package.json')
-      .then(response =>response.json())
-      .then(json =>console.log('success'))
-      .then(dispatch(endAction))
+  const start = createAction(startAction)
+  const end = createAction(startAction)
+  return function(data,cd,reject){
+    return function(dispatch){
+      dispatch(start())
+      fetch('package.json')
+        .then(response =>response.json())
+        .then(json =>console.log('success'))
+        .then(dispatch(end({req:11})))
+    }
   }
 }
 
