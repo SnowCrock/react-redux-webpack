@@ -23,12 +23,13 @@ export default class app extends React.Component{
   }
 
   send(){
+    debugger
     this.props.dispatch(increment({}))
   }
 
   componentWillMount(){
     const state=this.state
-    console.log({...state,loading:false})
+    // console.log({...state,loading:false})
   }
 
   render(){

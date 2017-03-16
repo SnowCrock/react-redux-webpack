@@ -8,7 +8,7 @@ var config={
   output:{    //出口，定义打包输出的文件
     path:path.resolve(__dirname),
     filename:'bundle.js',
-    publicPath:'./',
+    // publicPath:'./',
   },  
   devtool: 'source-map',    //webpack 打包方式配置项
   resolve:{   // 定义能够被打包的文件，文件后缀名,指定可以被import的文件后缀,导入时可不写后缀名
@@ -40,7 +40,7 @@ var config={
   },  
   plugins:[   //定义一些额外的插件
     new webpack.HotModuleReplacementPlugin(),  //代码热替换
-    // new openBrowserWebpackPlugin({url:'http://localhost:3000'}),//自动打开浏览器地址
+    new openBrowserWebpackPlugin({url:'http://localhost:3000'}),//自动打开浏览器地址
   ], 
 }
 

@@ -7,7 +7,7 @@ var server = new webpackDevServer(compiler,{
   historyApiFallback:true,
   hot:true,
   inline:true,
-  // contentBase:'./app',
+  contentBase:'./',
   stats:{colors:true}
 })
 
