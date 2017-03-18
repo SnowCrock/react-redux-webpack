@@ -3,24 +3,22 @@ import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 
 @connect(
-  (state,props)=>({
-    counter:state,
-  }),
-)//两种写法  跟的参数都是一样的
+    (state, props) => ({
+      counter: state,
+    }),
+  ) //两种写法  跟的参数都是一样的
 
 
-export default class about extends React.Component{
-  constructor(props){
+export default class about extends React.Component {
+  constructor(props) {
     super(props)
-    this.state={
-    }
+    this.state = {}
   }
 
-  componentWillMount(){
-  }
+  componentWillMount() {}
 
-  render(){
-    return(
+  render() {
+    return (
       <div>
         关于
       </div>

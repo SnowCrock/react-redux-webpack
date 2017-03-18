@@ -6,35 +6,34 @@ import { Link } from 'react-router'
 import { fetchPosts } from 'utils/ansyAction'
 import { increment } from 'actions/home'
 @connect(
-  (state,props)=>({
-    counter:state,
-  }),
-)//两种写法  跟的参数都是一样的
+    (state, props) => ({
+      counter: state,
+    }),
+  ) //两种写法  跟的参数都是一样的
 
 
-export default class app extends React.Component{
-  constructor(props){
+export default class app extends React.Component {
+  constructor(props) {
     super(props)
-    this.state={
-      type:1,
-      value:2,
+    this.state = {
+      type: 1,
+      value: 2,
     }
     this.send = this.send.bind(this)
   }
 
-  send(){
-    debugger
+  send() {
     this.props.dispatch(increment({}))
   }
 
-  componentWillMount(){
-    const state=this.state
-    // console.log({...state,loading:false})
+  componentWillMount() {
+    const state = this.state
+      // console.log({...state,loading:false})
   }
 
-  render(){
-    const { children } =this.props
-    return(
+  render() {
+    const { children } = this.props
+    return (
       <div className='home'>
         <ul className='title'>
           <li>

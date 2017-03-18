@@ -3,6 +3,7 @@ import { createAction } from 'redux-actions'
 
 
 export const REQUEST_POSTS = 'REQUEST_POSTS'
+
 function requestPosts(subreddit) {
   return {
     type: REQUEST_POSTS,
@@ -11,6 +12,7 @@ function requestPosts(subreddit) {
 }
 
 export const RECEIVE_POSTS = 'RECEIVE_POSTS'
+
 function receivePosts(subreddit, json) {
   return {
     type: RECEIVE_POSTS,
@@ -20,22 +22,25 @@ function receivePosts(subreddit, json) {
   }
 }
 
-export function createAjaxAction(api,startAction,endAction){
+export function createAjaxAction(api, startAction, endAction) {
   const start = createAction(startAction)
-  const end = createAction(startAction)
-  return function(data,cd,reject){
-    return function(dispatch){
+  const end = createAction(endAction)
+  return function(data, cd, reject) {
+    return function(dispatch) {
       dispatch(start())
-      fetch('package.json')
-        .then(response =>response.json())
-        .then(json =>console.log('success'))
-        .then(dispatch(end({req:11})))
+      fetch('http://127.0.0.1:8088/')
+        // .then(response => response.json())
+        .then(json => console.log('success'))
+        .then(dispatch(end({ req: 11 })))
+        .catch(error=>{
+          console.error(error)
+        })
     }
   }
 }
 
-export function ajaxPosts(){
-  
+export function ajaxPosts() {
+
 }
 
 export function fetchPosts(subreddit) {
@@ -47,8 +52,8 @@ export function fetchPosts(subreddit) {
     // 首次 dispatch：更新应用的 state 来通知
     // API 请求发起了。
     dispatch(requestPosts(subreddit))
-    //thunk middleware调用的函数可以有返回值，
-    //他回被当作dispatch方法的返回值传递。（比如这里返回的是一个等待处理的promise）
+      //thunk middleware调用的函数可以有返回值，
+      //他回被当作dispatch方法的返回值传递。（比如这里返回的是一个等待处理的promise）
 
     return fetch(`package.json`)
       .then(response => response.json())

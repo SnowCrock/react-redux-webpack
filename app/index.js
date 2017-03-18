@@ -13,10 +13,10 @@ import 'styles/common.less'
 
 
 store.subscribe(()=>console.log(store.getState()))
+// console.log(routers)
 ReactDOM.render(
   <Provider store={store}>
-    <Router history={hashHistory}>
-      {routers}
+    <Router history={hashHistory} routes ={routers}>
     </Router>
   </Provider>,
   document.getElementById('root')

@@ -7,10 +7,34 @@ import Setting from 'pages/setting/index'
 import About from 'pages/about/index'
 
 
-export const routers=(
+/*export const routers=(
       <Route path='/' component ={App}>
         <Route path='/home' component ={Home}/>
         <Route path='/setting' component ={Setting}/>
         <Route path='/about' component ={About}/>
       </Route>
     )
+*/
+export const routers ={
+  component: App,
+    childRoutes: [
+    {
+      path: '/',
+      indexRoute: {
+          getComponent(location, cb) {
+          // 懒加载 Page1.js 访问根目录的时候才会加载进来Page1.js的模块
+              require.ensure([], (require) => {
+                cb(null, require('./containers/App').default);
+              },'app');
+          },
+      }   
+    }, 
+    {
+      path: '/home',
+      getComponent(location, cb) {
+        require.ensure([], (require) => {
+          cb(null, require('pages/home/index.js').default);
+        },'Home');
+      },
+    }]
+}

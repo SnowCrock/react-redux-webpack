@@ -13,4 +13,4 @@ const  createStoreWithMiddleware = applyMiddleware(
   thunk,
   promise
 )(createStore)
-console.log(store)
+// console.log(store)
