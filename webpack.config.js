@@ -4,7 +4,7 @@ var openBrowserWebpackPlugin = require('open-browser-webpack-plugin')
 var config={
   entry:[     //入口文件
     path.resolve(__dirname,'app/index.js'),
-    vendor:['react'] //提取react模块作为公共的js文件
+    // vendor:['react'] //提取react模块作为公共的js文件
   ],  
   output:{    //出口，定义打包输出的文件
     path:path.resolve(__dirname),
