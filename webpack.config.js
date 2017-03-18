@@ -3,11 +3,14 @@ var path = require('path')
 var openBrowserWebpackPlugin = require('open-browser-webpack-plugin')
 var config={
   entry:[     //入口文件
-    path.resolve(__dirname,'app/index.js')  
+    path.resolve(__dirname,'app/index.js'),
+    vendor:['react'] //提取react模块作为公共的js文件
   ],  
   output:{    //出口，定义打包输出的文件
     path:path.resolve(__dirname),
-    filename:'bundle.js',
+    // filename:'bundle.js',
+    filename:'[name].js',  //注意这里，用[name]可以自动生成路由名称对应的js文件
+    chunkFilename: '[name].js' //注意这里，用[name]可以自动生成路由名称对应的js文件
     // publicPath:'./',
   },  
   devtool: 'source-map',    //webpack 打包方式配置项
@@ -41,6 +44,11 @@ var config={
   plugins:[   //定义一些额外的插件
     new webpack.HotModuleReplacementPlugin(),  //代码热替换
     new openBrowserWebpackPlugin({url:'http://localhost:3000'}),//自动打开浏览器地址
+    //react的公共模块
+    new webpack.optimize.CommonsChunkPlugin({
+      names:['bundle'],
+      filename:'bundle.js'
+    })
   ], 
 }
 
