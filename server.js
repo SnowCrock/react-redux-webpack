@@ -11,7 +11,7 @@ var server = new webpackDevServer(compiler,{
   stats:{colors:true}
 })
 
-config.entry.unshift("webpack-dev-server/client?http://localhost:3000/","webpack/hot/dev-server")
+config.entry.app.unshift("webpack-dev-server/client?http://localhost:3000/","webpack/hot/dev-server")
 
 server.listen(3000,'localhost',function(err){
   if(err){

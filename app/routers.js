@@ -7,15 +7,15 @@ import Setting from 'pages/setting/index'
 import About from 'pages/about/index'
 
 
-/*export const routers=(
+export const routers=(
       <Route path='/' component ={App}>
         <Route path='/home' component ={Home}/>
         <Route path='/setting' component ={Setting}/>
         <Route path='/about' component ={About}/>
       </Route>
     )
-*/
-export const routers ={
+
+/*export const routers ={
   component: App,
     childRoutes: [
     {
@@ -38,3 +38,22 @@ export const routers ={
       },
     }]
 }
+*/
+/*export const routers = ( <Route path = '/'
+  getComponent = {
+    (location, callback) => {
+      System.import('./containers/App').then(component => {
+        callback(null, component.default || component)
+      })
+    }
+  } >
+  <Route path = '/home'
+    getComponent = {
+      (location, callback) => {
+        System.import('pages/home/index').then(component => {
+          callback(null, component.default || component)
+        })
+      }
+    } />
+  </Route>
+)*/
