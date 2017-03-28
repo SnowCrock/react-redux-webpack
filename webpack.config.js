@@ -14,11 +14,11 @@ var config={
     // vendor:['react']
   },
   output:{    //出口，定义打包输出的文件
-    path:path.resolve(__dirname),
-    filename:'bundle.js',
-    // filename:'[name].js',  //注意这里，用[name]可以自动生成路由名称对应的js文件
-    // chunkFilename: '[name].js' //注意这里，用[name]可以自动生成路由名称对应的js文件
-    // publicPath:'./',
+    path:path.resolve(__dirname,'dist'),
+    // filename:'bundle.js',
+    filename:'bundle.js',  //注意这里，用[name]可以自动生成路由名称对应的js文件
+    chunkFilename: '[name].js', //注意这里，用[name]可以自动生成路由名称对应的js文件
+    // publicPath:'./dist',
   },  
   devtool: 'source-map',    //webpack 打包方式配置项
   resolve:{   // 定义能够被打包的文件，文件后缀名,指定可以被import的文件后缀,导入时可不写后缀名

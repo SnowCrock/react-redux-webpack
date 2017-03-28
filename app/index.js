@@ -16,7 +16,8 @@ store.subscribe(()=>console.log(store.getState()))
 // console.log(routers)
 ReactDOM.render(
   <Provider store={store}>
-    <Router history={hashHistory} routes ={routers}>
+    <Router history={hashHistory}>
+      {routers}
     </Router>
   </Provider>,
   document.getElementById('root')

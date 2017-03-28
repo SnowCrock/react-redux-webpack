@@ -5,6 +5,8 @@ import { Link } from 'react-router'
 
 import { fetchPosts } from 'utils/ansyAction'
 import { increment } from 'actions/home'
+import 'styles/homeStyle.less'
+
 @connect(
     (state, props) => ({
       counter: state,
