@@ -5,7 +5,7 @@ import { Link } from 'react-router'
 
 import { fetchPosts } from 'utils/ansyAction'
 import { increment } from 'actions/home'
-import 'styles/homeStyle.less'
+import style from 'styles/common.less'
 
 @connect(
     (state, props) => ({
@@ -36,8 +36,8 @@ export default class app extends React.Component {
   render() {
     const { children } = this.props
     return (
-      <div className='home'>
-        <ul className='title'>
+      <div className={`${style.test} home`}>
+        <ul className={style.title}>
           <li>
             <Link to='/home'>HOME</Link>
           </li>

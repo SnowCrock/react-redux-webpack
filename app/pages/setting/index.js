@@ -4,7 +4,6 @@ import { connect } from 'react-redux'
 import {
   addTodo,
 } from 'actions/home'
-import 'styles/homeStyle.less'
 
 @connect(
   (state,props)=>({

@@ -9,7 +9,6 @@ import { createStore, applyMiddleware } from 'redux'
 import rootReducer from './reducers'
 
 import { store } from 'store/configureStore'
-import 'styles/common.less'
 
 
 store.subscribe(()=>console.log(store.getState()))
